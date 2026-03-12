@@ -10,8 +10,12 @@ from config import SENDER_EMAIL, STORE_NAME
 
 
 def get_gmail_password():
-    """환경변수에서 Gmail 앱 비밀번호 읽기."""
-    return os.environ.get("GMAIL_APP_PASSWORD", "").strip()
+    """환경변수에서 Gmail 앱 비밀번호 읽기. (Vercel 등은 대소문자 주의)"""
+    # 대문자 우선, 일부 플랫폼은 소문자로 저장될 수 있음
+    return (
+        os.environ.get("GMAIL_APP_PASSWORD", "").strip()
+        or os.environ.get("gmail_app_password", "").strip()
+    )
 
 
 def fill_template(template_body: str, template_subject: str, supplier_name: str, item_list_html: str) -> tuple[str, str]:

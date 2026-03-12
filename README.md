@@ -31,12 +31,14 @@
 
 1. [Vercel](https://vercel.com)에 로그인 후 **New Project** → GitHub 저장소 `syp1130/20260312_-` 연결
 
-2. **Environment Variables**에 설정:
+2. **Environment Variables**에 설정 (이름은 정확히 맞춰야 함):
    - `TEAM_PASSWORD`: 팀원만 알 수 있는 접속 비밀번호 (필수 권장)
    - `SESSION_SECRET`: 세션 암호화용 랜덤 문자열 (예: `openssl rand -hex 32`)
-   - `GMAIL_APP_PASSWORD`: Gmail 앱 비밀번호 (발주 메일 발송 시 필요)
+   - `GMAIL_APP_PASSWORD`: Gmail 앱 비밀번호 (발주 메일 발송 시 필요, **대문자**로 입력)
 
-3. **Deploy** 후 배포 URL로 접속 → 비밀번호 입력 후 사용
+3. **중요**: 환경변수 추가/수정 후 반드시 **Redeploy** 해야 반영됩니다. (Deployments → ⋮ → Redeploy)
+
+4. **Deploy** 후 배포 URL로 접속 → 비밀번호 입력 후 사용
 
 ## 저장소
 
